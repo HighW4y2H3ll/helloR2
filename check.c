@@ -79,11 +79,11 @@ int main() {
 
         // get asm 1
         RAsmOp op;
-        int nop = r_asm_disassemble(core->assembler, &op, core->block, bb->size);
+        int nop = r_asm_disassemble(core->rasm, &op, core->block, bb->size);
         printf("  %d - %s\n", nop, r_asm_op_get_asm(&op));
 
         // get asm 2
-        RAsmCode *c = r_asm_mdisassemble(core->assembler, core->block, bb->size);
+        RAsmCode *c = r_asm_mdisassemble(core->rasm, core->block, bb->size);
         printf("%s\n", c->assembly);
     }
 
